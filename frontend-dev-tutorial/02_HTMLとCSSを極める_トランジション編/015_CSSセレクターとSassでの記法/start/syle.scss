@@ -1,0 +1,39 @@
+.parent {
+  color: blue;
+
+  & > .element {
+    color: purple;
+
+    &.second-child {
+      color: #000;
+    }
+  }
+}
+
+.element {
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

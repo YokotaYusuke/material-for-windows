@@ -1,0 +1,13 @@
+.parent {
+  color: blue;
+}
+.parent > .element {
+  color: purple;
+}
+.parent > .element.second-child {
+  color: #000;
+}
+
+.element {
+  color: red;
+}/*# sourceMappingURL=syle.css.map */
