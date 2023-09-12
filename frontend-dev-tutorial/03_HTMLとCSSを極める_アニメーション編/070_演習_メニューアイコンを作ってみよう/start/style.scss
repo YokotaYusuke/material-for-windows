@@ -1,0 +1,41 @@
+$cBlank: black;
+$cWhite: white;
+
+.mobile-menu-icon {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  & > span {
+    display: block;
+    background-color: $cBlank;
+    width: 35px;
+    height: 2px;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.menu-open {
+  background-color: $cBlank;
+  .mobile-menu-icon {
+    & > span {
+      background-color: $cWhite;
+      &:nth-child(1) {
+        transition-delay: 0.7s;
+        transform: translateY(11px) rotate(135deg);
+      }
+      &:nth-child(2) {
+        transform: translate(-18px) scaleX(0);
+      }
+      &:nth-child(3) {
+        transition-delay: 0.6s;
+        transform: translateY(-11px) rotate(-135deg);
+      }
+    }
+  }
+}
