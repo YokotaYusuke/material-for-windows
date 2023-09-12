@@ -5,5 +5,13 @@ function tag(accu, curr) {
     return `${accu}<${curr}>`;
 }
 
-const result = strArry.reduce(tag, "");
+function reduce(strArry, callBack, defalutValue) {
+    let accu = defalutValue;
+    for(const ele of strArry) {
+        accu = callBack(accu, ele);
+    }
+    return accu;
+}
+
+const result = reduce(strArry, tag, "");
 console.log(result);
