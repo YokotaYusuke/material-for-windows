@@ -7,7 +7,13 @@ body {
   width: 100px;
   height: 100px;
   background-color: black;
-  animation: sk-bouncedelay 1.4s;
+  animation: sk-bouncedelay 1.4s infinite;
+  animation-timing-function: ease;
+  animation-direction: reverse;
+}
+
+.paused {
+  animation-play-state: paused;
 }
 
 @keyframes sk-bouncedelay {

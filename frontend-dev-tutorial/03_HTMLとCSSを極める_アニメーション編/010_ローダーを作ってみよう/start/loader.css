@@ -2,17 +2,17 @@
   text-align: center;
 }
 .three-dot-spinner div {
-  display: inline-block;
   width: 18px;
   height: 18px;
+  display: inline-block;
   background-color: black;
   border-radius: 50%;
   animation: sk-bouncedelay 1.4s infinite;
 }
-.three-dot-spinner div:nth-child(1) {
+.three-dot-spinner .bounce1 {
   animation-delay: -0.32s;
 }
-.three-dot-spinner div:nth-child(2) {
+.three-dot-spinner .bounce2 {
   animation-delay: -0.16s;
 }
 
