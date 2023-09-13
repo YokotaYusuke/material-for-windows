@@ -13,17 +13,20 @@ body {
 }
 
 .animate-title,
-.animate-title-2 {
+.animate-title-2,
+.animate-title-3 {
   color: white;
   opacity: 0;
   font-size: 2em;
 }
 .animate-title.inview,
-.animate-title-2.inview {
+.animate-title-2.inview,
+.animate-title-3.inview {
   opacity: 1;
 }
 .animate-title.inview .char,
-.animate-title-2.inview .char {
+.animate-title-2.inview .char,
+.animate-title-3.inview .char {
   display: inline-block;
   animation-name: kf-animate-chars;
   animation-duration: 0.5s;
@@ -34,40 +37,84 @@ body {
   animation-fill-mode: both;
 }
 .animate-title.inview .char:nth-child(1),
-.animate-title-2.inview .char:nth-child(1) {
+.animate-title-2.inview .char:nth-child(1),
+.animate-title-3.inview .char:nth-child(1) {
   animation-delay: 0.04s;
 }
 .animate-title.inview .char:nth-child(2),
-.animate-title-2.inview .char:nth-child(2) {
+.animate-title-2.inview .char:nth-child(2),
+.animate-title-3.inview .char:nth-child(2) {
   animation-delay: 0.08s;
 }
 .animate-title.inview .char:nth-child(3),
-.animate-title-2.inview .char:nth-child(3) {
+.animate-title-2.inview .char:nth-child(3),
+.animate-title-3.inview .char:nth-child(3) {
   animation-delay: 0.12s;
 }
 .animate-title.inview .char:nth-child(4),
-.animate-title-2.inview .char:nth-child(4) {
+.animate-title-2.inview .char:nth-child(4),
+.animate-title-3.inview .char:nth-child(4) {
   animation-delay: 0.16s;
 }
 .animate-title.inview .char:nth-child(5),
-.animate-title-2.inview .char:nth-child(5) {
+.animate-title-2.inview .char:nth-child(5),
+.animate-title-3.inview .char:nth-child(5) {
   animation-delay: 0.2s;
 }
 .animate-title.inview .char:nth-child(6),
-.animate-title-2.inview .char:nth-child(6) {
+.animate-title-2.inview .char:nth-child(6),
+.animate-title-3.inview .char:nth-child(6) {
   animation-delay: 0.24s;
 }
 .animate-title.inview .char:nth-child(7),
-.animate-title-2.inview .char:nth-child(7) {
+.animate-title-2.inview .char:nth-child(7),
+.animate-title-3.inview .char:nth-child(7) {
   animation-delay: 0.28s;
 }
 .animate-title.inview .char:nth-child(8),
-.animate-title-2.inview .char:nth-child(8) {
+.animate-title-2.inview .char:nth-child(8),
+.animate-title-3.inview .char:nth-child(8) {
   animation-delay: 0.32s;
 }
 .animate-title.inview .char:nth-child(9),
-.animate-title-2.inview .char:nth-child(9) {
+.animate-title-2.inview .char:nth-child(9),
+.animate-title-3.inview .char:nth-child(9) {
   animation-delay: 0.36s;
+}
+.animate-title.inview .char:nth-child(10),
+.animate-title-2.inview .char:nth-child(10),
+.animate-title-3.inview .char:nth-child(10) {
+  animation-delay: 0.4s;
+}
+.animate-title.inview .char:nth-child(11),
+.animate-title-2.inview .char:nth-child(11),
+.animate-title-3.inview .char:nth-child(11) {
+  animation-delay: 0.44s;
+}
+.animate-title.inview .char:nth-child(12),
+.animate-title-2.inview .char:nth-child(12),
+.animate-title-3.inview .char:nth-child(12) {
+  animation-delay: 0.48s;
+}
+.animate-title.inview .char:nth-child(13),
+.animate-title-2.inview .char:nth-child(13),
+.animate-title-3.inview .char:nth-child(13) {
+  animation-delay: 0.52s;
+}
+.animate-title.inview .char:nth-child(14),
+.animate-title-2.inview .char:nth-child(14),
+.animate-title-3.inview .char:nth-child(14) {
+  animation-delay: 0.56s;
+}
+.animate-title.inview .char:nth-child(15),
+.animate-title-2.inview .char:nth-child(15),
+.animate-title-3.inview .char:nth-child(15) {
+  animation-delay: 0.6s;
+}
+.animate-title.inview .char:nth-child(16),
+.animate-title-2.inview .char:nth-child(16),
+.animate-title-3.inview .char:nth-child(16) {
+  animation-delay: 0.64s;
 }
 
 @keyframes kf-animate-chars {
