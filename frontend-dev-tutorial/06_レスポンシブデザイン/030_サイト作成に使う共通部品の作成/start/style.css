@@ -1,3 +1,21 @@
+.font-sm {
+  font-size: 14px;
+}
+@media (min-width: 960px) {
+  .font-sm {
+    font-size: 26px;
+  }
+}
+
+.font-md {
+  font-size: 17px;
+}
+@media (min-width: 960px) {
+  .font-md {
+    font-size: 19px;
+  }
+}
+
 h1 {
   color: red;
   background: yellow;

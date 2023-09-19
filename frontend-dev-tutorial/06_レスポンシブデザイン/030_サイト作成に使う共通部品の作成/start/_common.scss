@@ -1,0 +1,17 @@
+@use "mq" as *;
+
+.font-sm {
+  font-size: 14px;
+
+  @include mq(lg) {
+    font-size: 26px;
+  }
+}
+
+.font-md {
+  font-size: 17px;
+
+  @include mq(lg) {
+    font-size: 19px;
+  }
+}
