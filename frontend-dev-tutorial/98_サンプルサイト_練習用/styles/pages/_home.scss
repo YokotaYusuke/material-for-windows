@@ -1,11 +1,101 @@
 @use "../globals/index" as *;
 @use "../parts/common" as *;
 
+
+#container {
+  background-color: $cWhite;
+  position: relative;
+  z-index: 10;
+  transition: transform .5s, box-shadow .5s;
+}
+
+#main-content {
+  position: relative;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: -1;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navHeight;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+
+  &.triggered {
+    background-color: rgba(255,255,255,.9);
+    box-shadow: 10px 0 25px -10px rgba(0,0,0,.5);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend .content-width;
+
+    & > .logo {
+      font-size: 42px;
+    }
+  }
+
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    display: none;
+    @include mq(lg) {
+      display: block;
+    }
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__li {
+    margin: 10px;
+
+    @include mq(md) {
+      margin-left: 30px;
+      margin-right: 0;
+    }
+
+    & > a {
+      color: $cBlack;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+
+  }
+
+
+}
+
+.hero {
+  @extend .pb-lg;
+}
+
 .travel {
   @extend .content-width;
   @extend .mb-lg;
 
   &__inner {
+    position: relative;
+    z-index: 0;
     @extend .flex;
     justify-content: space-between;
     background-color: $cBgGray;
@@ -22,6 +112,11 @@
   &__img {
     height: 300px;
     @extend .mb-sm;
+    transition: box-shadow 1s ease 1.6s;
+
+    &.inview {
+      box-shadow: inset 0 0 30px $cBlack;
+    }
 
     @include mq(md) {
       flex-basis: 47%;
@@ -32,6 +127,8 @@
     }
 
     & > img {
+      position: relative;
+      z-index: -1;
       opacity: 1;
       object-fit: cover;
       width: 100%;
@@ -47,12 +144,19 @@
       align-items: flex-end;
       flex-basis: 47%;
     }
+
+    &.inview {
+      & .travel__title::before {
+        @include animation($name: scaleX, $duration: 0.3s, $delay: 1.5s);
+      }
+    }
   }
 
   &__title {
     position: relative;
 
     &::before {
+      display: none;
       content: "";
       position: absolute;
       height: 1px;
@@ -60,6 +164,12 @@
       top: 50%;
       left: -120px;
       background-color: $cBlack;
+      transform: scaleX(0);
+      transform-origin: right;
+
+      @include mq(lg) {
+        display: block;
+      }
     }
   }
 
@@ -67,6 +177,15 @@
     @include mq(lg) {
       margin-bottom: 40px;
     }
+  }
+}
+
+@keyframes scaleX {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
   }
 }
 
@@ -161,4 +280,126 @@
     flex-basis: 100%;
     @extend .mb-lg;
   }
+}
+
+.footer {
+  padding: 60px 0;
+  @extend .content-width;
+
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__ul {
+    @extend .flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__li {
+    margin: 10px;
+
+    @include mq(md) {
+      margin-left: 0;
+      margin-right: 30px;
+    }
+
+    & > a {
+      color: $cSubTitle;
+      text-decoration: none;
+    }
+  }
+}
+
+.logo {
+
+  justify-content: center;
+
+  @include mq(md) {
+    justify-content: flex-start;
+  }
+  font-size: 38px;
+  display: flex;
+
+  &__img {
+    width: 0.7em;
+  }
+
+  &__world {
+    color: $cWineRed;
+  }
+}
+
+.side {
+  display: none;
+  position: fixed;
+  top: 70%;
+  transform: translateY(-50%);
+  transition: all .3s ease;
+
+  @include mq(xl) {
+    display: block;
+  }
+
+  & .tween-animate-title {
+    color: $cBlack;
+    text-decoration: none !important;
+    margin: 0 40px;
+    vertical-align: middle;
+    letter-spacing: 2px;
+  }
+
+  &.left {
+    left: -50%;
+
+    &.inview {
+      left: 50px;
+    }
+
+    & .side__inner {
+      transform-origin: top left;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &.right {
+    right: -50px;
+
+    &.inview {
+      right: 50px;
+    }
+
+    & .side__inner {
+      transform-origin: top right;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+.icon {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 1em;
+    height: 1em;
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: none;
+    background-size: contain;
+  }
+
+  // &.twitter::before {
+  //   background-image: url(../../images/リスのアイコンですたい。.jpeg);
+  // }
+  // &.fb::before {
+  //   background-image: url(../../images/熱帯魚のアイコン素材\ 2.jpeg);
+  // }
 }
